@@ -1,7 +1,11 @@
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(
-  'postgresql://neondb_owner:scR5o3JDNuzv@ep-cool-paper-a5dz9krs.us-east-2.aws.neon.tech/neondb?sslmode=require'
-);
+const databaseUrl = process.env.DATABASE_URL;
+
+if (!databaseUrl) {
+  throw new Error('DATABASE_URL no está configurada');
+}
+
+const sql = neon(databaseUrl);
 
 export default sql;
