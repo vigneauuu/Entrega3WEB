@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 
-const clave = 'INSAAAID';
+const clave = process.env.JWT_SECRET;
+if (!clave) throw new Error('JWT_SECRET no está configurada');
 
 // middleware para verificar si el usuario ADMIN esta veri
 export function verifyAdminToken(req, res, next) {

@@ -2,7 +2,8 @@ import sql from '../db.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs'; // corregir typo en 'bycrypt'
 
-const clave = 'INSAAAID'; // clave para firmar el JWT
+const clave = process.env.JWT_SECRET;
+if (!clave) throw new Error('JWT_SECRET no está configurada');
 
 export const authController = {
   // registro de usuario
