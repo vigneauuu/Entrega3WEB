@@ -16,6 +16,13 @@ Node.js, Express, JavaScript, PostgreSQL (Neon), JWT y OpenAPI.
 
 ## Ejecutar localmente
 
-Instala las dependencias con `npm install` y ejecuta `node index.js`. El servidor escucha en el puerto `3001`. Para las funciones que usan base de datos se necesita configurar la conexión utilizada en `db.js`.
+Se necesita Node.js y una base de datos PostgreSQL compatible. Configura `DATABASE_URL` en el entorno con una cadena de conexión **propia y vigente**; no la agregues al repositorio. Luego ejecuta:
+
+```bash
+npm install
+node index.js
+```
+
+El servidor escucha en el puerto `3001`. La documentación de la API queda en `http://localhost:3001/api/home`.
 
 > Entrega académica de 2024. El repositorio documenta el trabajo realizado y no se presenta como servicio desplegado.
